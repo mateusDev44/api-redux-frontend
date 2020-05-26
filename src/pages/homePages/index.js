@@ -12,7 +12,7 @@ return(
 <div>
 <TopBar/>
 
-<h1>Home Page</h1>
+<h1 style={{fontStyle: "italic"}} ><strong>Home Page</strong></h1>
 
 <br></br>
 <br></br>

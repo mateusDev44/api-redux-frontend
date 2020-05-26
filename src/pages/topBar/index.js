@@ -11,18 +11,21 @@ return(
 <div> 
 
 
-
-<nav className="navbar navbar-dark bg-primary">
-  <Link className="navbar-brand" to='/'>Futebol</Link>
-
-  <nav className="navbar navbar-dark bg-primary">
-  <form className="form-inline">
+<nav className="navbar navbar-expand-lg navbar-light bg-info">
+<Link className="navbar-brand" to='/'style={{fontStyle: "italic"}} ><strong>Futebol</strong></Link>
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
+  </button>
+  <div className="collapse navbar-collapse" id="navbarNav">
+    <ul className="navbar-nav">
+    <form className="form-inline">
     
-  <Link to='/' className="btn btn-info"style={{color:'white'}}>Home</Link>
-  
-  <Link to='/jogadores' className="btn btn-info" style={{color:'white'}}>jogadores</Link> 
-</form>
-</nav>
+    <Link to='/' className="btn btn-info"style={{color:'white', fontStyle: "italic"}}>Home</Link>
+    
+    <Link to='/jogadores' className="btn btn-info" style={{color:'white', fontStyle: "italic"}}>Jogadores</Link> 
+  </form>
+    </ul>
+  </div>
 </nav>
 
 </div>
