@@ -1,7 +1,7 @@
 import React from 'react';
 import TopBar from '../topBar';
 import { connect } from 'react-redux';
-import { listarjogadores } from '../../redux/actions/jogadoresactions';
+import { listarjogadores, excluirJogador } from '../../redux/actions/jogadoresactions';
 import './listajogadores.css';
 import { Link } from 'react-router-dom';
 
@@ -15,6 +15,12 @@ class Listajogadores extends React.Component {
 
 
     }
+
+
+    deletePlayer(id) {
+        this.props.dispatch(excluirJogador(id));
+    }
+
 
 
     render() {
@@ -92,7 +98,7 @@ class Listajogadores extends React.Component {
                                                <Link className="btn btn-primary" to={{pathname: '/jogadores/' + jogador.id}}>Detalhes</Link>
          
                                            <Link className="btn btn-success" to={{ pathname: `/jogadores/editar/${jogador.id}` }} >Editar</Link>
-                                           <Link className="btn btn-danger"  >Excluir</Link>
+                                           <Link className="btn btn-danger"  onClick={ () => this.deletePlayer(jogador.id)} >Excluir</Link>
                                             </td> 
                                         </tr>
 

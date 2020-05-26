@@ -10,7 +10,7 @@ export const iniciarBusca = () => {
 
 export const sucessoBusca = (jogadores) => {
     return {
-        type: ACTION_TYPES_JOGADORES.SUCESSO_BUSCA,
+        type: ACTION_TYPES_JOGADORES.LISTA_JOGADORES_SUCESS,
         payload: { jogadores }
     }
 }
@@ -112,6 +112,16 @@ export function detalhesJogador(id) {
     }
 }
 
+export function excluirJogador(id) {
+    return dispatch => {
+        dispatch(iniciarBusca());
+        api.delete(`/players/${id}`).then(response => {
+            dispatch(sucessoBusca(response.data));
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+}
 
 
 export function gravarJogador(dados){
